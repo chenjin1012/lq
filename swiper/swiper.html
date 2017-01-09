@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.swiper-container{
+			width: 850px;
+			height: 300px;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.swiper-wrap{
+			width: 400%;
+			height: 100%;
+		}
+		.swiper-slide{
+			float: left;
+			width: 850px;
+			height: 100%;
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: 100%;
+		}
+		.swiper-btn-prev,.swiper-btn-next{
+			width: 30px;
+			height: 70px;
+			background-color: rgba(0,0,0, 0.3);
+			position: absolute;
+			top: 110px;
+			color: #FFF;
+			line-height: 70px;
+			text-align: center;
+			font-size: 30px;
+			cursor: pointer;
+		}
+		.swiper-btn-prev:hover,.swiper-btn-next:hover{
+			background-color: rgba(0,0,0, 0.7);
+		}
+		.swiper-btn-prev{
+			left: 0;			
+		}
+		.swiper-btn-next{
+			right: 0;
+		}
+		.swiper-progination{
+			width: 25%;
+			height: 20px;
+			position: absolute;
+			bottom: 0;
+			left: 42%;
+		}
+		.swiper-progination>span{
+			width: 15px;
+			height: 15px;
+			float: left;
+			cursor: pointer;
+			background-color: #FFF;
+			border-radius: 50%;
+			margin-left: 5px;
+		}
+		.swiper-progination>span.on{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-container" id="swipe1">
+		<div class="swiper-wrap" style="margin-left: 0;">
+			<div class="swiper-slide"><img src="images/1.png"></div>
+			<div class="swiper-slide"><img src="images/2.png"></div>
+			<div class="swiper-slide"><img src="images/3.png"></div>
+			<div class="swiper-slide"><img src="images/4.png"></div>
+		</div>
+		<div class="swiper-btn-prev"><</div>
+		<div class="swiper-btn-next">></div>
+		<div class="swiper-progination">
+			<span class="on"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		;(function(exports, $z){
+			var $z = new $z();
+			function Swiper(id){
+				this.container = $z.id(id);
+				this.width = this.container.offsetWidth;
+				this.wrap = this.container.querySelector(".swiper-wrap");
+				this.slides = this.container.querySelectorAll(".swiper-slide");
+				this.num = this.slides.length;
+				this.progination = this.container.querySelector(".swiper-progination")
+				this.timer;
+				this.index = 1;
+				this.init(this.index);
+				this.lbtn = this.container.querySelector(".swiper-btn-prev");
+				this.rbtn = this.container.querySelector(".swiper-btn-next");
+				this.mouseenter();
+			}
+			Swiper.prototype.init = function(index){
+				// this.moveTo(index);
+			}
+			Swiper.prototype.createProgination = function(){
+				
+			}
+			Swiper.prototype.onbtn = function(){
+				var btns = this.progination.querySelectorAll("span");
+				for (var i = 0; i < this.num; i++) {
+					btns[i].className = "";
+				}
+				btns[this.index-1].className = "on";
+			}
+			Swiper.prototype.mouseenter = function(){
+				var self = this;
+				this.lbtn.onclick = function(){
+					self.index == self.num ? self.index = 1: self.index += 1;
+					self.moveTo(-self.width);
+				}
+				this.rbtn.onclick = function(){
+					self.index == 1 ? self.index = self.num : self.index -= 1;
+					self.moveTo(self.width);
+				}
+				this.progination.addEventListener("click", function(e){
+					if(e.target.nodeName == "SPAN"){
+						// ? how to know this e.target index
+						self.index = 2;
+						self.onbtn();
+					}else{
+						return;
+					}
+				}, true)
+			}
+			Swiper.prototype.moveTo = function(number){
+				var min = -(this.width)*(this.num-1), max = 0;
+				var left = parseInt(this.wrap.style.marginLeft) + number;
+				this.wrap.style.marginLeft = left + "px";
+				if(left > max){
+					this.wrap.style.marginLeft = min + "px";
+				}
+				if(left < min){
+					this.wrap.style.marginLeft = max + "px";
+				}
+				this.onbtn();
+				console.log(this.index);
+			}
+			Swiper.prototype.autoplay = function(index){
+				
+			}
+			exports.Swiper = Swiper;
+		})(window, $z);
+
+		function $z(){
+			this.id = function(id){
+				return document.getElementById(id);
+			};
+			this.tag = function(containerId, tagName){
+				if(typeof containerId == "undefined" && this.id(containerId)){
+					return this.id(containerId).getElementsByTagName(tagName);
+				}else if(typeof containerId == "object"){
+					return containerId.getElementsByTagName(tagName);
+				}else{
+					throw ("the first argument is'not id!");
+				}
+			};
+			this.class = function(parent, oclass){
+				return parent.querySelectorAll(oclass);
+			};
+			this.create = function(tagName, attr){
+				var dom = document.createElement(tagName);
+				for(var i in attr){
+					dom[i] = attr[i];
+				}
+				return dom;
+			}
+		}
+		window.onload = function(){
+			var swipe1 = new Swiper("swipe1");
+		}
+	</script>
+</body>
+</html>
