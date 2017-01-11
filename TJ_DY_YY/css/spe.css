@@ -1,0 +1,68 @@
+*{
+	box-sizing: border-box;
+	font-family: "微软雅黑", "黑体";
+}
+html,body{
+	min-width: 1400px;
+	color: #836a52;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+.top{
+	width: 100%;
+	height: 580px;
+	position: relative;
+}
+.top a{
+	display: inline-block;
+	position: absolute;
+	right: 60px;
+	top: 40px;
+	text-align: center;
+	color: #FFF;
+	background-color: #331900;
+	padding: 10px 20px;
+}
+.aside{
+	width: 1200px;
+	margin: 60px auto;
+}
+.aside-tit{
+	line-height: 30px;
+	color: #543516;
+	font-size: 30px;
+	font-weight: 400;
+	text-indent: 20px;
+}
+.aside-cont{
+	background-color: #eee;
+	border: 1px solid #543516;
+	padding: 20px;
+	overflow: hidden;
+	position: relative;
+}
+.aside-fl{
+	width: 250px;
+	height: 337px;
+	float: left;
+}
+.aside-fr{
+	width: 830px;
+	float: left;
+	margin-left: 50px;
+	font-size: 14px;
+	padding-top: 30px;
+	color: #a29283;
+}
+.aside-more{
+	position: absolute;
+	width: 144px;
+	line-height: 30px;
+	background-color: #543516;
+	color: #FFF;
+	text-align: center;
+	right: 20px;
+	bottom: 20px;
+}

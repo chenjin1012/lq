@@ -1,32 +1,37 @@
-html,body{
-	min-width: 1400px;
-	color: #222;
+*{
 	box-sizing: border-box;
 	font-family: "微软雅黑", "黑体";
+}
+html,body{
+	min-width: 1400px;
+	color: #000;
 }
 .header{
 	width: 100%;
 	background-color: #e3f0ff;
+	border-bottom: 2px solid #0063cf;
 }
 .header .banner img{
 	width: 100%;
-	height: 380px;
+	height: 480px;
 }
 .nav{
-	width: 1100px;
+	width: 1040px;
 	overflow: hidden;
 	margin: 0 auto;
-	padding: 0 25px;
 }
 .nav>li{
 	float: left;
 	height: 40px;
 	line-height: 40px;
-	padding: 0 10px;
-	margin: 0 8px;
+	padding: 0 15px;
+	border-right: 1px solid #ccdef3;
+}
+.nav>li:first-child{
+	border-left: 1px solid #ccdef3;
 }
 .nav>li a{
-	color: #222;
+	color: #000;
 }
 li.nav-active{
 	border-bottom: 3px solid #0063cf;
@@ -40,9 +45,10 @@ li.nav-active{
 	background-color: #00468c;
 	color: #FFF;
 	font-size: 13px;
+	clear: both;
 }
 .footer>div{
-	width: 1100px;
+	width: 1200px;
 	margin: 0 auto;
 	overflow: hidden;
 }

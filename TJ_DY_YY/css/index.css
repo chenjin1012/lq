@@ -1,4 +1,271 @@
 /*main*/
 .main{
-	width: 1100px;
+	width: 1200px;
+	margin: 30px auto 0;
+}
+/*news*/
+.news{
+	overflow: hidden;
+}
+.news-title{
+	border-top: 3px solid #0164cf;
+	height: 40px;
+	line-height: 40px;
+	text-indent: 20px;
+	position: relative;
+	color: #0164cf;
+}
+.news-title:before,.news-title:after{
+	content: "";
+	position: absolute;
+	height: 15px;
+	border-right: 1px solid #bbbbbb;
+	top: 0;
+}
+.news-title:before{
+	left: 0;
+}
+.news-title:after{
+	right: 0;
+}
+.news-title h4{
+	color: #000;
+	font-weight: 400;
+	font-size: 18px;
+}
+.news-title h4 span{
+	color:#0164cf;
+}
+.news-title .more{
+	position: absolute;
+	right: 0;
+	top: 0px;
+	right: 10px;
+	color: #888888;
+	font-size: 14px;
+	cursor: pointer;
+}
+.news-left,.news-cont,.news-right{
+	float: left;
+	width: 400px;
+	height: 300px;
+}
+.news-left{
+	margin-right: 20px;
+}
+.news-left img{
+	width: 100%;
+	height: 100%;
+}
+.news-cont{
+	overflow: hidden;
+}
+.news-plist{
+	width: 195px;
+	float: left;
+}
+.news-cont .news-plist:last-child{
+	margin-left: 10px;
+}
+.news-plist dd img{
+	width: 100%;
+	height: 155px;
+}
+.news-plist dt:nth-child(2){
+	font-size: 16px;
+	margin: 5px 0 5px;
+}
+.news-plist dt:nth-child(3){
+	font-size: 14px;
+	color: #777;
+	text-indent: 28px;
+}
+.news-right{
+	box-sizing: border-box;
+	width: 360px;
+	margin-left: 10px;
+	background-color: #eeeeee;
+	padding: 10px;
+}
+.news-right .news-list li{
+	height: 20px;
+	line-height: 20px;
+	position: relative;
+}
+.news-list li a{
+	font-size: 15px;
+	color: #000;
+}
+.news-right .news-list li:nth-child(n+2){
+	margin-top: 5px;
+}
+.news-list-t{
+	font-size: 13px;
+	color: #8e8e8e;
+	margin-left: 5px;
+}
+/*mleft*/
+.mleft{
+	width: 400px;
+	margin-top: 20px;
+	background-color: #e3f0ff;
+	float: left;
+	margin-right: 20px;
+	padding: 15px;	
+	box-sizing: border-box;
+	position: relative;
+}
+.mleft-tip{
+	position: absolute;
+	width: 40px;
+	height: 120px;
+	border: 2px solid #0164cf;
+	border-right: 0;
+	top: 0;
+	left: -40px;
+	font-size: 18px;
+	padding: 5px;
+	text-align: center;
+	color: #0466d0;
+	background-color: #aed7ff;
+	cursor: pointer;
+}
+.mleft-tip span:first-child{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+.card{
+	width: 370px;
+	height: 140px;
+	background-color: #FFF;
+	margin-bottom: 15px;
+	box-shadow: 1px 3px 2px #dddddd;
+	position: relative;
+}
+.card:last-child{
+	margin-bottom: 0;
+}
+.card-fl{
+	width: 104px;
+	height: 140px;
+	float: left;
+}
+.card-fl>img{
+	width: 100%;
+	height: 100%
+}
+.card-fr {
+	color: #000;
+	float: left;
+	width: 263px;
+	padding-top: 10px;
+	text-indent: 40px;
+}
+.card-fr h4{
+	font-weight: 400;
+	line-height: 40px;
+	font-size: 20px;
+}
+.card-fr p{
+	line-height: 30px;
+	font-size: 15px;
+}
+.card-fr h4,.card-fr p{
+	border-bottom: 1px solid #dddddd;
+}
+.card-more{
+	width: 30px;
+	color: #aaaaaa;
+	font-weight: 700;
+	font-size: 30px;
+	text-align: center;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	cursor: pointer;
+}
+.card-more-bg{
+	width: 0;
+	height: 0;
+	border-bottom: 50px solid #dddddd;
+    border-left: 50px solid transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+/*mright*/
+.mright{
+	width: 770px;
+	float: left;
+	margin: 20px 0 20px;
+}
+.mright-cont{
+	margin-bottom: 20px;
+}
+.mright-cont img{
+	width: 100%;
+	height: 460px;
+}
+/*section*/
+.section{
+	clear: both;
+	border-top: 1px solid #bbb;
+	margin: 40px 0 20px;
+}
+.section-limit{
+	height: 320px;
+}
+.section-tit{
+	z-index: 3;
+	width: 110px;
+	line-height: 40px;
+	font-weight: 400;
+	font-size: 22px;
+	margin: 0 auto;
+	margin-top: -20px;
+	background-color: #FFF;
+	text-align: center;
+	border-top: 2px solid #0164cf;
+	position: relative;
+
+}
+.section-tit:before,.section-tit:after{
+	content: "";
+	width: 0;
+	height: 18px;
+	border-right: 1px solid #bbb;
+	position: absolute;
+	top: 0;
+}
+.section-tit:before{
+	left: 0;
+}
+.section-tit:after{
+	right: 0;
+}
+.btn-list{
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+.btn-list a{
+	display: inline-block;
+	width: 100px;
+	line-height: 40px;
+	float: left;
+	text-align: center;
+	border: 1px solid #c8e2ff;
+	background-color: #e3f0ff;
+	margin-left: 30px;
+}
+.section .news-plist{
+	width: 224px;
+	margin-right: 20px;
+}
+.section .news-plist:last-child{
+	margin-right: 0;
 }
